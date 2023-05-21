@@ -1,0 +1,60 @@
+/*--|| Fonts ||--*/
+@font-face {
+    font-family: 'main-font';
+    src: url(../fonts/Cairo-Regular.ttf) format('truetype');
+    font-weight: 400;
+}
+body {
+	font-family: 'main-font' !important;
+	font-weight: 400;
+}
+.rtl #wpadminbar *,
+.theme-browser .theme.add-new-theme .theme-name,
+.wrap h1.wp-heading-inline,
+.rtl h1, .rtl h2, .rtl h3, .rtl h4, .rtl h5, .rtl h6,
+.media-router>a,
+.media-menu>a,
+.media-modal-content .media-frame select.attachment-filters,
+.rtl .media-frame, 
+.rtl .media-frame .search, 
+.rtl .media-frame input[type=tel], 
+.rtl .media-frame input[type=text], 
+.rtl .media-frame input[type=password], 
+.rtl .media-frame input[type=number], 
+.rtl .media-frame input[type=search], 
+.rtl .media-frame input[type=email], 
+.rtl .media-frame input[type=url], 
+.rtl .media-frame select, .rtl 
+.media-frame textarea, .rtl 
+.media-modal,
+button#content-tmce { 
+	font-family: 'main-font'; 
+	font-weight: 400;
+}
+.rtl .media-frame input[type=text],
+.media-modal-content .media-frame select.attachment-filters {
+	width: 150px
+}
+.rtl .quicktags-toolbar input, .rtl .wp-switch-editor {
+    font-family: 'main-font' !important;
+}
+
+p.MBP {
+    position:  relative;
+    height:  auto;
+}
+p.MBP label {
+    width: 20%;
+    display:  inline-block;
+    font-weight:  bold;
+}
+p.MBP select {
+    display:  inline-block;
+    width: 75%;
+    height:  35px;
+    font-weight:  bold;
+}
+p.MBP + p.MBP {
+	border-top: 1px solid #E9E9E9;
+	padding-top: 10px
+}

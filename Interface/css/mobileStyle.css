@@ -1,0 +1,1846 @@
+@media screen and (max-width: 992px) {
+    .adsHome {
+        padding: 0 20px
+    }
+    .AdvancedSearch {
+        padding:0 20px ;
+    }
+    .adsHome .col {
+        width: 296px;
+        height: 60px;
+    }
+    .container {
+        width: 100%;
+    }
+    .intro a.logo {
+        width: 300px
+    }
+    .ActorPage > div > .left .MostViews:nth-child(2) {
+        margin-right: 2%;
+    }
+    header .top .social a.search {
+        display:  none;
+    }
+    header .top {
+        height:  auto;
+    }
+    header .top .social {
+        float:  none;
+        display:  block;
+        width:  100%;
+        text-align:  center;
+    }
+    select#selectbox {
+        padding-right:  5px;
+    }
+    header.scrolled a.header-logo {
+        display:  block;
+        width:  100%;
+        height:  auto;
+        text-align:  center;
+        clear: both;
+        float:  none;
+    }
+    header.scrolled select#selectbox {
+        clear:  both;
+        z-index:  99999999;
+        color: #000;
+    }
+    .newset-master .right {
+        float:  none;
+        display:  block;
+        width: 95%;
+        margin: 0 auto 10px;
+    }
+    .newset-master .left {
+        float:  none;
+        display:  block;
+        width: 95%;
+        margin: 0 auto 0px;
+    }
+    .filter-slider li {
+        float:  right;
+        width: 33.3%;
+        text-align:  center;
+    }
+    .filter-slider li i {
+        float: none;
+    }
+    .BlocksHolder .block:nth-child(3n+0) {
+        margin-left: 8px;
+    }
+    .BlocksHolder .block:nth-child(3n+0) {
+        margin-left: 0px;
+    }
+    .BlocksHolder .block {
+        width: 32.5%;
+        margin-left: 9px;
+    }
+    .newset-master .block a p {
+        display: none
+    }
+    .filterItems li {
+        width: 50%;
+        float: right;
+        text-align: center
+    }
+    li.singleBB {
+        width: 25%;
+        float: none;
+        margin: 0 auto 10px !important;
+    }
+    .footer-links {
+        height:  auto;
+    }
+    ul.footer-social {
+        float: none;
+        display:  block;
+        width:  100%;
+        clear:  both;
+        margin-bottom: 10px;
+    }
+    select.footer-select {
+        float: none;
+        display:  block;
+        width:  100%;
+        margin-bottom:  10px;
+    }
+    .footer-links > div > div, .footer-links > div > div > ul {
+        float: none;
+        display: block;
+        clear: both
+    }
+    .single-header {
+        height: auto
+    }
+    .post-thumb {
+        float: none;
+        height: 300px;
+        display: block;
+        margin:  0 auto;
+        clear:  both;
+    }
+    .social-share {
+        float: none;
+        position:  relative;
+        bottom:  auto;
+        left:  auto;
+        right:  auto;
+        top: auto;
+        margin: 0 auto 50px;
+    }
+    h1.single-title {
+        padding: 0 20px 10px;
+        clear:  both;
+        float:  none;
+        display:  block;
+        width:  100%;
+        margin-top: 40px;
+        text-align:  center;
+    }
+    h1.single-title span {
+        display: block;
+    }
+    .single-tabs {
+        display: block;
+        clear:  both;
+        width:  100%;
+        padding-left:  0;
+        padding: 0 20px;
+        text-align:  center;
+    }
+    .single-tabs button {
+        float: right;
+        width: 48%;
+        margin:  0;
+        margin-bottom: 7px;
+    }
+    .single-tabs button:nth-child(odd) {
+        margin-left: 2%;
+    }
+    .breadCrumbs {
+        height:  auto;
+        padding: 10px 20px;
+    }
+    li.random-block {
+        float: none;
+        width: 70%;
+        margin: 0 auto 10px;
+    }
+    .random-posts li.random-block:nth-child(5n+0) {
+        margin-left: auto
+    }
+    .single-info .right {
+        float: none;
+        display:  block;
+        width:  100%;
+        text-align:  center;
+    }
+    .single-info .right .post-thumbnail {
+        float: none;
+        display:  block;
+        margin: 0 auto 10px;
+    }
+    .single-info .center {
+        float: none;
+        display: block;
+        width:  100%;
+        text-align:  center;
+        padding: 6px;
+    }
+    .single-info .center .Box li {
+        width: 100%;
+    }
+    .single-info .center .Box li:nth-child(odd) {
+        margin-left: 0
+    }
+    .single-info .left {
+        float: none;
+        display: block;
+        width:  100%;
+        margin-top: 10px;
+    }
+    .single-info .ServersRight {
+        float: none;
+        display:  block;
+        width:  100%;
+        height:  auto;
+        min-height:  auto;
+        margin: 0 auto 10px;
+        clear:  both;
+    }
+    .single-info .watch-Area {
+        padding: 0;
+        margin:  0;
+        width:  100%;
+        float:  none;
+    }
+    .single-info .watch-Area iframe {
+        height: 300px;
+    }
+    .download-servers h2.TitleAreaTwo {
+        font-size: 14px;
+        height: auto
+    }
+    .download-servers h2.TitleAreaTwo span {
+        float:  right;
+        width: calc(100% - 40px);
+    }
+    .download-servers ul {
+        text-align:center
+    }
+    .download-servers li {
+        float: none;
+        display:  inline-block;
+        margin:  7px auto 0;
+        width: 100%
+    }
+    .ActorPage > div > .left,
+    .ActorPage > div > .right {
+        float: none;
+        width:  100%;
+        margin-right:  0;
+        padding:  0;
+    }
+    .ActorPage {
+        padding: 20px 10px;
+    }
+    .ActorBlocksHolder li.random-block {
+        float: right;
+        display:  block;
+        width: 24.25%;
+        margin-left: 1%;
+    }
+    .ActorPage > div > .left .MostViews > h1 span {
+        width: 90%
+    }
+    .ActorBlocksHolder li.random-block:nth-child(4n+1) {
+        margin-left: 0
+    }
+    .ActorBlocksHolder li.random-block:nth-child(4n+1) {
+        margin-left: 0;
+    }
+    .ActorPage > div > .left .MostViews {
+        margin: 0;
+        margin-top: 15px;
+        float:  right;
+        width: 49%;
+    }
+    footer {
+        padding: 0 20px
+    }
+    footer .left,
+    footer .right {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    .ActorPage > div > .right .header h1 {
+        float: right;
+    }
+    .ActorPage > div > .right .header .share {
+        float: left;
+    }
+    .ActorPage > div > .right .header {
+        height: auto;
+        text-align: center;
+    }
+    .ActorPage > div > .right .header .share li {
+        float: right;
+        display: inline-block;
+        margin-left: 5px;
+    }
+    .ActorPage > div > .right .header .share > ul >span {
+        display:  inline-block;
+        float:  none;
+        padding: 0 !important;
+        display:  none;
+    }
+    .OtherActors .Holder li {
+        width: 32%;
+        height:  100px;
+        margin-bottom:  8px;
+        margin-left: 6px;
+    }
+    .OtherActors .Holder li:nth-child(3n+0) {
+        margin-left: 0
+    }
+    .TemplatePage {
+        padding: 20px 15px;
+    }
+    .ActorsListBlock {
+        width: 48.7%;
+        margin-left:  0;
+    }
+    .ActorsListBlock:nth-child(odd) {
+        margin-left: 7px
+    }
+}
+@media screen and (max-width: 768px) {
+    .AdvancedSearch {
+        height: auto;
+    }
+    .AdvancedSearch span {
+        float: none;
+        display: block;
+        width: 100%;
+        text-align:  center;
+    }
+    .AdvancedSearch span i {
+        float: none;
+        display: inline-block;
+        font-size: 20px
+    }
+    .AdvancedSearch span em {
+        float: none;
+        font-size: 20px
+    }
+    .AdvancedSearch form {
+        display: block;
+        width: 100%;
+        padding: 0 10px;
+    }
+    .AdvancedSearch form input {
+        display: block;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    .AdvancedSearch form select {
+        display: block;
+        width: 100%;
+        height: 30px;
+        margin-bottom: 5px;
+    }
+    .AdvancedSearch form button {
+        display: block;
+        width: 100%;
+        height: 30px
+    }
+    .adsHome .col {
+        width: 100%;
+        margin-bottom:10px;
+        height: 70px;
+    }
+    .adsHome {
+        margin: 20px 0 10px;
+        padding: 0 10px;
+    }
+    .container {
+        width: 100%;
+    }
+    .filterItems {
+        height: auto;
+        border-radius:  0;
+        margin-bottom: 20px;
+        padding: 7px 0 0;
+    }
+    .filterItems h1 {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding-bottom: 7px;
+        padding-top: 5px;
+        overflow:  hidden;
+    }
+    .filterItems h1 > span {
+        float: none;
+        display: inline-block:
+        padding: 0;
+    }
+    .filterItems h1 > i {
+        font-size: 20px;
+        float: none;
+        display: inline-block;
+        padding: 0;
+        padding-left: 6px;
+    }
+    .intro a.logo {
+        width: 300px
+    }
+    header .top .social a.search {
+        display:  none;
+    }
+    header .top {
+        height:  auto;
+    }
+    header .top .social {
+        float:  none;
+        display:  block;
+        width:  100%;
+        text-align:  center;
+    }
+    select#selectbox {
+        padding-right:  5px;
+    }
+    header.scrolled a.header-logo {
+        display:  block;
+        width:  100%;
+        height:  auto;
+        text-align:  center;
+        clear: both;
+        float:  none;
+    }
+    header.scrolled select#selectbox {
+        clear:  both;
+        z-index:  99999999;
+        color: #000;
+    }
+    .newset-master .right {
+        float:  none;
+        display:  block;
+        width: 95%;
+        margin: 0 auto 10px;
+    }
+    .newset-master .left {
+        float:  none;
+        display:  block;
+        width: 95%;
+        margin: 0 auto 0px;
+    }
+    .filter-slider li {
+        float:  right;
+        width:  50%;
+    }
+    .filter-slider li i {
+        float: none;
+    }
+    .BlocksHolder .block:nth-child(3n+0) {
+        margin-left: 8px;
+    }
+    .BlocksHolder .block:nth-child(3n+0) {
+        margin-left: 0px;
+    }
+    .BlocksHolder .block {
+        width: 32%;
+        height: 190px;
+        margin-left: 0;
+    }
+    .BlocksHolder .block:nth-child(2n+0) {
+        margin-left: auto;
+    }
+    .BlocksHolder .block {
+        margin-left: 10px !important
+    }
+    .BlocksHolder .block:nth-child(3n+0) {
+        margin-left: 0px !important
+    }
+    .newset-master .block a p {
+        display: none
+    }
+    .filterItems ul {
+        float: none;
+        clear: both;
+    }
+    .filterItems li {
+        width: 33.3%;
+        float: right;
+        text-align: center
+    }
+    section.recent-posts {
+        padding: 0 30px
+    }
+    li.singleBB {
+        width: 49%;
+        float: right;
+        margin: 0 auto 10px;
+        margin-left:  0;
+    }
+    li.singleBB:nth-child(1n+1) {
+        margin-right: 1%;
+    }
+    li.singleBB:nth-child(5n+0) {
+        margin-left: 0%
+    }
+    .footer-links {
+        height:  auto;
+    }
+    ul.footer-social {
+        float: none;
+        display:  block;
+        width:  100%;
+        clear:  both;
+        margin-bottom: 10px;
+    }
+    select.footer-select {
+        float: none;
+        display:  block;
+        width:  100%;
+        margin-bottom:  10px;
+    }
+    .footer-links > div > div, .footer-links > div > div > ul {
+        float: none;
+        display: block;
+        clear: both
+    }
+    .single-header {
+        height: auto
+    }
+    .post-thumb {
+        float: none;
+        height: 300px;
+        display: block;
+        margin:  0 auto;
+        clear:  both;
+    }
+    .social-share {
+        float: none;
+        position:  relative;
+        bottom:  auto;
+        left:  auto;
+        right:  auto;
+        top: auto;
+        margin: 0 auto 50px;
+    }
+    h1.single-title {
+        padding: 0 20px 10px;
+        clear:  both;
+        float:  none;
+        display:  block;
+        width:  100%;
+        margin-top: 40px;
+        text-align:  center;
+    }
+    h1.single-title span {
+        display: block;
+    }
+    .single-tabs {
+        display: block;
+        clear:  both;
+        width:  100%;
+        padding-left:  0;
+        padding: 0 20px;
+        text-align:  center;
+    }
+    .single-tabs button {
+        float: right;
+        width: 24%;
+        margin:  0;
+        margin-bottom: 7px;
+        margin-left: 9px !important;
+    }
+    .single-tabs button:nth-child(odd) {
+        margin-left: 0;
+    }
+    button.comments {
+        margin-left: 0 !important
+    }
+    .single-tabs button:last-child {
+        margin-left: 0px !important
+    }
+    .breadCrumbs {
+        height:  auto;
+        padding: 10px 20px;
+    }
+    .random-posts {
+        padding: 0 20px;
+    }
+    li.random-block {
+        float: right;
+        width: 32.66%;
+        margin: 0 auto 10px;
+        margin-left:  1%;
+    }
+    li.random-block:nth-child(3n+0) {
+        margin-left: 0
+    }
+    .random-posts li.random-block:nth-child(5n+0) {
+        margin-left: 1%;
+    }
+    .single-info .right {
+        float: none;
+        display:  block;
+        width:  100%;
+        text-align:  center;
+    }
+    .single-info .right .post-thumbnail {
+        float: none;
+        margin: 0 auto 10px;
+        display:  block;
+        width: 40%;
+    }
+    .single-info .center {
+        float: none;
+        display: block;
+        width:  100%;
+        text-align:  center;
+        padding: 6px;
+    }
+    .single-info .center .Box li {
+        width: 100%;
+    }
+    .single-info .center .Box li:nth-child(odd) {
+        margin-left: 0
+    }
+    .single-info .left li.TeamWork {
+        float:  right;
+        width:  49%;
+    }
+    .single-info .left li.TeamWork:nth-child(2n+0) {
+        margin-right: 1%
+    }
+    .single-info .left hr {
+        display: none !important
+    }
+    .single-info .left {
+        float: none;
+        display: block;
+        width:  100%;
+        margin-top: 10px;
+    }
+    .single-info .ServersRight {
+        float: none;
+        display:  block;
+        width:  100%;
+        height:  auto;
+        min-height:  auto;
+        margin: 0 auto 10px;
+        clear:  both;
+    }
+    .single-info .watch-Area {
+        padding: 0;
+        margin:  0;
+        width:  100%;
+        float:  none;
+    }
+    .single-info .watch-Area iframe {
+        height: 300px;
+    }
+    .download-servers h2.TitleAreaTwo {
+        font-size: 14px;
+        height: auto
+    }
+    .download-servers h2.TitleAreaTwo span {
+        float:  right;
+        width: calc(100% - 40px);
+    }
+    .download-servers ul {
+        text-align:center
+    }
+    .download-servers li {
+        float: none;
+        display:  inline-block;
+        margin:  7px auto 0;
+        width: 100%
+    }
+    .ActorPage > div > .left,
+    .ActorPage > div > .right {
+        float: none;
+        width:  100%;
+        margin-right:  0;
+        padding:  0;
+    }
+    .ActorPage {
+        padding: 20px 10px;
+    }
+    .ActorBlocksHolder li.random-block {
+        float: right;
+        width: 32.66%;
+        margin: 0 auto 10opx;
+    }
+    .ActorBlocksHolder li.random-block:nth-child(4n+1) {
+        margin-left: 1%;
+    }
+    .ActorBlocksHolder li.random-block:nth-child(3n+1) {
+        margin-left: 0;
+    }
+    .ActorPage > div > .left .MostViews {
+        margin: 0;
+        margin-top: 15px
+    }
+    footer {
+        padding: 0 20px
+    }
+    footer .left,
+    footer .right {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    .ActorPage > div > .right .header h1 {
+        float: right;
+    }
+    .ActorPage > div > .right .header .share {
+        float: left;
+    }
+    .ActorPage > div > .left .MostViews > h1 span {
+        width: 90%
+    }
+    .ActorPage > div > .right .header {
+        height: auto;
+        text-align: center;
+    }
+    .ActorPage > div > .right .header .share li {
+        float: right;
+        margin-left: 5px;
+    }
+    .ActorPage > div > .right .header .share > ul >span {
+        display:  inline-block;
+        float:  none;
+        padding: 0 !important;
+        display:  none;
+    }
+    .OtherActors .Holder li {
+        width: 32%;
+        height:  100px;
+        margin-bottom:  8px;
+        margin-left: 6px;
+    }
+    .OtherActors .Holder li:nth-child(3n+0) {
+        margin-left: 0
+    }
+    .TemplatePage {
+        padding: 20px 15px;
+    }
+    .ActorsListBlock {
+        width: 48.7%;
+        margin-left:  0;
+    }
+    .ActorsListBlock:nth-child(odd) {
+        margin-left: 7px
+    }
+}
+@media screen and (max-width: 575px) {
+    .AdvancedSearch {
+        height: auto;
+    }
+    .AdvancedSearch span {
+        float: none;
+        display: block;
+        width: 100%;
+        text-align:  center;
+    }
+    .AdvancedSearch span i {
+        float: none;
+        display: inline-block;
+        font-size: 20px
+    }
+    .AdvancedSearch span em {
+        float: none;
+        font-size: 20px
+    }
+    .AdvancedSearch form {
+        display: block;
+        width: 100%;
+        padding: 0 10px;
+    }
+    .AdvancedSearch form input {
+        display: block;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    .AdvancedSearch form select {
+        display: block;
+        width: 100%;
+        height: 30px;
+        margin-bottom: 5px;
+    }
+    .AdvancedSearch form button {
+        display: block;
+        width: 100%;
+        height: 30px
+    }
+    .adsHome .col {
+        width: 100%;
+        margin-bottom:10px;
+        height: 70px;
+    }
+    .adsHome {
+        margin: 20px 0 10px;
+        padding: 0 10px;
+    }
+    .container {
+        width: 100%;
+    }
+    .intro a.logo {
+        width: 300px
+    }
+    header .top .social a.search {
+        display:  none;
+    }
+    header .top {
+        height:  auto;
+    }
+    header .top .social {
+        float:  none;
+        display:  block;
+        width:  100%;
+        text-align:  center;
+    }
+    select#selectbox {
+        padding-right:  5px;
+    }
+    header.scrolled a.header-logo {
+        display:  block;
+        width:  100%;
+        height:  auto;
+        text-align:  center;
+        clear: both;
+        float:  none;
+    }
+    header.scrolled select#selectbox {
+        clear:  both;
+        z-index:  99999999;
+        color: #000;
+    }
+    .newset-master .right {
+        float:  none;
+        display:  block;
+        width: 95%;
+        margin: 0 auto 10px;
+    }
+    .newset-master .left {
+        float:  none;
+        display:  block;
+        width: 95%;
+        margin: 0 auto 0px;
+    }
+    .filter-slider li {
+        float:  right;
+        width:  50%;
+    }
+    .BlocksHolder .block:nth-child(3n+0) {
+        margin-left: 8px;
+    }
+    .BlocksHolder .block:nth-child(2n+0) {
+        margin-left: 0px;
+    }
+    .BlocksHolder .block {
+        width: 48.5%;
+        height: 150px;
+        margin-left: 8px;
+    }
+    .newset-master .block a p {
+        display: none
+    }
+    .filterItems li {
+        width: 50%;
+        float: right;
+        text-align: center
+    }
+    li.singleBB {
+        width: 80%;
+        float:  none;
+        display:  block;
+        margin: 0 auto 10px;
+    }
+    li.singleBB:nth-child(5n+0) {
+        margin-left: auto
+    }
+    .footer-links {
+        height:  auto;
+    }
+    ul.footer-social {
+        float: none;
+        display:  block;
+        width:  100%;
+        clear:  both;
+        margin-bottom: 10px;
+    }
+    select.footer-select {
+        float: none;
+        display:  block;
+        width:  100%;
+        margin-bottom:  10px;
+    }
+    .footer-links > div > div, .footer-links > div > div > ul {
+        float: none;
+        display: block;
+        clear: both
+    }
+    .single-header {
+        height: auto
+    }
+    .post-thumb {
+        float: none;
+        height: 300px;
+        display: block;
+        margin:  0 auto;
+        clear:  both;
+    }
+    .social-share {
+        float: none;
+        position:  relative;
+        bottom:  auto;
+        left:  auto;
+        right:  auto;
+        top: auto;
+        margin: 0 auto 50px;
+    }
+    h1.single-title {
+        padding: 0 20px 10px;
+        clear:  both;
+        float:  none;
+        display:  block;
+        width:  100%;
+        margin-top: 40px;
+        text-align:  center;
+    }
+    h1.single-title span {
+        display: block;
+    }
+    .single-tabs {
+        display: block;
+        clear:  both;
+        width:  100%;
+        padding-left:  0;
+        padding: 0 20px;
+        text-align:  center;
+    }
+    .single-tabs button {
+        float: right;
+        width: 48%;
+        margin:  0;
+        margin-bottom: 7px;
+    }
+    .single-tabs button:nth-child(odd) {
+        margin-left: 2%;
+    }
+    .breadCrumbs {
+        height:  auto;
+        padding: 10px 20px;
+    }
+    li.random-block {
+        float: none;
+        width: 70%;
+        margin: 0 auto 10px;
+    }
+    .random-posts li.random-block:nth-child(5n+0) {
+        margin-left: auto
+    }
+    .single-info .right {
+        float: none;
+        display:  block;
+        width:  100%;
+        text-align:  center;
+    }
+    .single-info .right .post-thumbnail {
+        float: none;
+        display:  block;
+        margin: 0 auto 10px;
+    }
+    .single-info .center {
+        float: none;
+        display: block;
+        width:  100%;
+        text-align:  center;
+        padding: 6px;
+    }
+    .single-info .center .Box li {
+        width: 100%;
+    }
+    .single-info .center .Box li:nth-child(odd) {
+        margin-left: 0
+    }
+    .single-info .left {
+        float: none;
+        display: block;
+        width:  100%;
+        margin-top: 10px;
+    }
+    .single-info .ServersRight {
+        float: none;
+        display:  block;
+        width:  100%;
+        height:  auto;
+        min-height:  auto;
+        margin: 0 auto 10px;
+        clear:  both;
+    }
+    .single-info .watch-Area {
+        padding: 0;
+        margin:  0;
+        width:  100%;
+        float:  none;
+    }
+    .single-info .watch-Area iframe {
+        height: 300px;
+    }
+    .download-servers h2.TitleAreaTwo {
+        font-size: 14px;
+        height: auto
+    }
+    .download-servers h2.TitleAreaTwo span {
+        float:  right;
+        width: calc(100% - 40px);
+    }
+    .download-servers ul {
+        text-align:center
+    }
+    .download-servers li {
+        float: none;
+        display:  inline-block;
+        margin:  7px auto 0;
+        width: 100%
+    }
+    .ActorPage > div > .left,
+    .ActorPage > div > .right {
+        float: none;
+        width:  100%;
+        margin-right:  0;
+        padding:  0;
+    }
+    .ActorPage {
+        padding: 20px 10px;
+    }
+    .ActorBlocksHolder li.random-block {
+        float: right;
+        width: 49.5%;
+        margin: 0 auto 10opx;
+        /* margin-left:  0; */
+    }
+    .ActorBlocksHolder li.random-block:nth-child(odd) {
+        margin-right: 1%
+    }
+    .ActorBlocksHolder li.random-block:nth-child(3n+1) {
+        margin-left: auto;
+    }
+    .ActorBlocksHolder li.random-block:nth-child(4n+1) {
+        margin-left: auto
+    }
+    .ActorPage > div > .left .MostViews {
+        margin: 0;
+        margin-top: 15px;
+        width:  100%;
+        float:  none;
+        display:  block;
+        margin-left:  0 !important;
+    }
+    .ActorPage > div > .left .MostViews > h1 span {
+        width: 90%
+    }
+    .ActorPage > div > .left .MostViews:nth-child(2) {
+        margin-right: 0
+    }
+    footer {
+        padding: 0 20px
+    }
+    footer .left,
+    footer .right {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    .ActorPage > div > .right .header h1 {
+        float:none;
+        display: block;
+        clear:  both;
+    }
+    .ActorPage > div > .right .header .share {
+        float: none;
+        display: block;
+        clear: both
+    }
+    .ActorPage > div > .right .header {
+        height: auto;
+        text-align: center;
+    }
+    .ActorPage > div > .right .header .share li {
+        float: none;
+        display: inline-block;
+        margin-left: 2px
+    }
+    .ActorPage > div > .right .header .share > ul >span {
+        display:  inline-block;
+        float:  none;
+        padding: 0 !important;
+        display:  none;
+    }
+    .OtherActors .Holder li {
+        width: 32%;
+        height:  100px;
+        margin-bottom:  8px;
+        margin-left: 6px;
+    }
+    .OtherActors .Holder li:nth-child(3n+0) {
+        margin-left: 0
+    }
+    .TemplatePage {
+        padding: 20px 15px;
+    }
+    .ActorsListBlock {
+        width: 48.7%;
+        margin-left:  0;
+    }
+    .ActorsListBlock:nth-child(odd) {
+        margin-left: 7px
+    }
+}
+@media screen and (max-width: 480px) {
+    .AdvancedSearch {
+        height: auto;
+    }
+    .AdvancedSearch span {
+        float: none;
+        display: block;
+        width: 100%;
+        text-align:  center;
+    }
+    .AdvancedSearch span i {
+        float: none;
+        display: inline-block;
+        font-size: 20px
+    }
+    .AdvancedSearch span em {
+        float: none;
+        font-size: 20px
+    }
+    .AdvancedSearch form {
+        display: block;
+        width: 100%;
+        padding: 0 10px;
+    }
+    .AdvancedSearch form input {
+        display: block;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    .AdvancedSearch form select {
+        display: block;
+        width: 100%;
+        height: 30px;
+        margin-bottom: 5px;
+    }
+    .AdvancedSearch form button {
+        display: block;
+        width: 100%;
+        height: 30px
+    }
+    .adsHome .col {
+        width: 100%;
+        margin-bottom:10px;
+        height: 70px;
+    }
+    .adsHome {
+        margin: 20px 0 10px;
+        padding: 0 10px;
+    }
+    .intro a.logo {
+        width: 300px
+    }
+    .container {
+        width: 100%;
+    }
+    header .top .social a.search {
+        display:  none;
+    }
+    header .top {
+        height:  auto;
+    }
+    header .top .social {
+        float:  none;
+        display:  block;
+        width:  100%;
+        text-align:  center;
+    }
+    select#selectbox {
+        padding-right:  5px;
+    }
+    header.scrolled a.header-logo {
+        display:  block;
+        width:  100%;
+        height:  auto;
+        text-align:  center;
+        clear: both;
+        float:  none;
+    }
+    header.scrolled select#selectbox {
+        clear:  both;
+        z-index:  99999999;
+        color: #000;
+    }
+    .newset-master .right {
+        float:  none;
+        display:  block;
+        width: 95%;
+        margin: 0 auto 10px;
+    }
+    .newset-master .left {
+        float:  none;
+        display:  block;
+        width: 95%;
+        margin: 0 auto 0px;
+    }
+    .filter-slider li {
+        float:  right;
+        width:  50%;
+    }
+    .BlocksHolder .block:nth-child(3n+0) {
+        margin-left: 8px;
+    }
+    .BlocksHolder .block:nth-child(2n+0) {
+        margin-left: 0px;
+    }
+    .BlocksHolder .block {
+        width: 48.5%;
+        height: 150px;
+        margin-left: 8px;
+    }
+    .newset-master .block a p {
+        display: none
+    }
+    .filterItems li {
+        width: 50%;
+        float: right;
+        text-align: center
+    }
+    li.singleBB {
+        width: 80%;
+        float:  none;
+        display:  block;
+        margin: 0 auto 10px;
+    }
+    li.singleBB:nth-child(5n+0) {
+        margin-left: auto
+    }
+    .footer-links {
+        height:  auto;
+    }
+    ul.footer-social {
+        float: none;
+        display:  block;
+        width:  100%;
+        clear:  both;
+        margin-bottom: 10px;
+    }
+    select.footer-select {
+        float: none;
+        display:  block;
+        width:  100%;
+        margin-bottom:  10px;
+    }
+    .footer-links > div > div, .footer-links > div > div > ul {
+        float: none;
+        display: block;
+        clear: both
+    }
+    .single-header {
+        height: auto
+    }
+    .post-thumb {
+        float: none;
+        height: 300px;
+        display: block;
+        margin:  0 auto;
+        clear:  both;
+    }
+    .social-share {
+        float: none;
+        position:  relative;
+        bottom:  auto;
+        left:  auto;
+        right:  auto;
+        top: auto;
+        margin: 0 auto 50px;
+    }
+    h1.single-title {
+        padding: 0 20px 10px;
+        clear:  both;
+        float:  none;
+        display:  block;
+        width:  100%;
+        margin-top: 40px;
+        text-align:  center;
+    }
+    h1.single-title span {
+        display: block;
+    }
+    .single-tabs {
+        display: block;
+        clear:  both;
+        width:  100%;
+        padding-left:  0;
+        padding: 0 20px;
+        text-align:  center;
+    }
+    .single-tabs button {
+        float: right;
+        width: 48%;
+        margin:  0;
+        margin-bottom: 7px;
+    }
+    .single-tabs button:nth-child(odd) {
+        margin-left: 2%;
+    }
+    .breadCrumbs {
+        height:  auto;
+        padding: 10px 20px;
+    }
+    li.random-block {
+        float: none;
+        width: 70%;
+        margin: 0 auto 10px;
+    }
+    .random-posts li.random-block:nth-child(5n+0) {
+        margin-left: auto
+    }
+    .single-info .right {
+        float: none;
+        display:  block;
+        width:  100%;
+        text-align:  center;
+    }
+    .single-info .right .post-thumbnail {
+        float: none;
+        display:  block;
+        margin: 0 auto 10px;
+    }
+    .single-info .center {
+        float: none;
+        display: block;
+        width:  100%;
+        text-align:  center;
+        padding: 6px;
+    }
+    .single-info .center .Box li {
+        width: 100%;
+    }
+    .single-info .center .Box li:nth-child(odd) {
+        margin-left: 0
+    }
+    .single-info .left {
+        float: none;
+        display: block;
+        width:  100%;
+        margin-top: 10px;
+    }
+    .single-info .ServersRight {
+        float: none;
+        display:  block;
+        width:  100%;
+        height:  auto;
+        min-height:  auto;
+        margin: 0 auto 10px;
+        clear:  both;
+    }
+    .single-info .watch-Area {
+        padding: 0;
+        margin:  0;
+        width:  100%;
+        float:  none;
+    }
+    .single-info .watch-Area iframe {
+        height: 300px;
+    }
+    .download-servers h2.TitleAreaTwo {
+        font-size: 14px;
+        height: auto
+    }
+    .download-servers h2.TitleAreaTwo span {
+        float:  right;
+        width: calc(100% - 40px);
+    }
+    .download-servers ul {
+        text-align:center
+    }
+    .download-servers li {
+        float: none;
+        display:  inline-block;
+        margin:  7px auto 0;
+        width: 100%
+    }
+    .ActorPage > div > .left,
+    .ActorPage > div > .right {
+        float: none;
+        width:  100%;
+        margin-right:  0;
+        padding:  0;
+    }
+    .ActorPage {
+        padding: 20px 10px;
+    }
+    .ActorBlocksHolder li.random-block {
+        float: none;
+        display:  block;
+        width: 60%;
+        margin: 0 auto 10opx;
+        margin-left: auto !important;
+        margin-right:  auto !important;
+    }
+    .ActorBlocksHolder li.random-block:nth-child(4n+1) {
+        margin-left: auto
+    }
+    .ActorPage > div > .left .MostViews {
+        margin: 0;
+        margin-top: 15px
+    }
+    footer {
+        padding: 0 20px
+    }
+    footer .left,
+    footer .right {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    .ActorPage > div > .right .header h1 {
+        float:none;
+        display: block;
+        clear:  both;
+    }
+    .ActorPage > div > .right .header .share {
+        float: none;
+        display: block;
+        clear: both
+    }
+    .ActorPage > div > .right .header {
+        height: auto;
+        text-align: center;
+    }
+    .ActorPage > div > .right .header .share li {
+        float: none;
+        display: inline-block;
+        margin-left: 2px
+    }
+    .ActorPage > div > .right .header .share > ul >span {
+        display:  inline-block;
+        float:  none;
+        padding: 0 !important;
+        display:  none;
+    }
+    .OtherActors .Holder li {
+        width: 32%;
+        height:  100px;
+        margin-bottom:  8px;
+        margin-left: 6px;
+    }
+    .OtherActors .Holder li:nth-child(3n+0) {
+        margin-left: 0
+    }
+    .TemplatePage {
+        padding: 20px 15px;
+    }
+    .ActorsListBlock {
+        width: 48.7%;
+        margin-left:  0;
+    }
+    .ActorsListBlock:nth-child(odd) {
+        margin-left: 7px
+    }
+}
+@media screen and (max-width: 380px) {
+    .container {
+        width: 100%;
+    }
+    .intro a.logo {
+        width: 300px
+    }
+    header .top .social a.search {
+        display:  none;
+    }
+    header .top {
+        height:  auto;
+    }
+    header .top .social {
+        float:  none;
+        display:  block;
+        width:  100%;
+        text-align:  center;
+    }
+    select#selectbox {
+        padding-right:  5px;
+    }
+    header.scrolled a.header-logo {
+        display:  block;
+        width:  100%;
+        height:  auto;
+        text-align:  center;
+        clear: both;
+        float:  none;
+    }
+    header.scrolled select#selectbox {
+        clear:  both;
+        z-index:  99999999;
+        color: #000;
+    }
+    .newset-master .right {
+        float:  none;
+        display:  block;
+        width: 95%;
+        margin: 0 auto 10px;
+    }
+    .filterItems {
+        height: auto;
+        border-radius:  0;
+        margin-bottom: 20px;
+        padding: 7px 0 0;
+    }
+    .filterItems h1 {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding-bottom: 7px;
+        padding-top: 5px;
+    }
+    .filterItems h1 > span {
+        float: none;
+        display: inline-block:
+        padding: 0;
+    }
+    .filterItems h1 > i {
+        font-size: 20px;
+        float: none;
+        display: inline-block;
+        padding: 0;
+        padding-left: 6px;
+    }
+    .newset-master .left {
+        float:  none;
+        display:  block;
+        width: 95%;
+        margin: 0 auto 0px;
+    }
+    .filter-slider li {
+        float:  right;
+        width:  50%;
+    }
+    .BlocksHolder .block:nth-child(3n+0) {
+        margin-left: 8px;
+    }
+    .BlocksHolder .block:nth-child(2n+0) {
+        margin-left: 0px;
+    }
+    .BlocksHolder .block {
+        width: 48.5%;
+        height: 150px;
+        margin-left: 0px !important;
+    }
+    .BlocksHolder .block:nth-child(2n+0) {
+        margin-right: 9px !important;
+    }
+    .newset-master .block a p {
+        display: none
+    }
+    .filterItems li {
+        width: 50%;
+        float: right;
+        text-align: center
+    }
+    li.singleBB {
+        width: 80%;
+        float:  none;
+        display:  block;
+        margin: 0 auto 10px !important;
+    }
+    li.singleBB:nth-child(5n+0) {
+        margin-left: auto
+    }
+    .footer-links {
+        height:  auto;
+    }
+    ul.footer-social {
+        float: none;
+        display:  block;
+        width:  100%;
+        clear:  both;
+        margin-bottom: 10px;
+    }
+    select.footer-select {
+        float: none;
+        display:  block;
+        width:  100%;
+        margin-bottom:  10px;
+    }
+    .footer-links > div > div, .footer-links > div > div > ul {
+        float: none;
+        display: block;
+        clear: both
+    }
+    .single-header {
+        height: auto
+    }
+    .post-thumb {
+        float: none;
+        height: 300px;
+        display: block;
+        margin:  0 auto;
+        clear:  both;
+    }
+    .social-share {
+        float: none;
+        position:  relative;
+        bottom:  auto;
+        left:  auto;
+        right:  auto;
+        top: auto;
+        margin: 0 auto 50px;
+    }
+    h1.single-title {
+        padding: 0 20px 10px;
+        clear:  both;
+        float:  none;
+        display:  block;
+        width:  100%;
+        margin-top: 40px;
+        text-align:  center;
+    }
+    h1.single-title span {
+        display: block;
+    }
+    .single-tabs {
+        display: block;
+        clear:  both;
+        width:  100%;
+        padding-left:  0;
+        padding: 0 20px;
+        text-align:  center;
+    }
+    .single-tabs button {
+        float: right;
+        width: 48%;
+        margin:  0;
+        margin-bottom: 7px;
+    }
+    .single-tabs button:nth-child(odd) {
+        margin-left: 2%;
+    }
+    .breadCrumbs {
+        height:  auto;
+        padding: 10px 20px;
+    }
+    li.random-block {
+        float: none;
+        width: 70%;
+        margin: 0 auto 10px;
+    }
+    .random-posts li.random-block:nth-child(5n+0) {
+        margin-left: auto
+    }
+    .single-info .right {
+        float: none;
+        display:  block;
+        width:  100%;
+        text-align:  center;
+    }
+    .single-info .right .post-thumbnail {
+        float: none;
+        display:  block;
+        margin: 0 auto 10px;
+    }
+    .single-info .center {
+        float: none;
+        display: block;
+        width:  100%;
+        text-align:  center;
+        padding: 6px;
+    }
+    .single-info .center .Box li {
+        width: 100%;
+    }
+    .single-info .center .Box li:nth-child(odd) {
+        margin-left: 0
+    }
+    .single-info .left {
+        float: none;
+        display: block;
+        width:  100%;
+        margin-top: 10px;
+    }
+    .single-info .ServersRight {
+        float: none;
+        display:  block;
+        width:  100%;
+        height:  auto;
+        min-height:  auto;
+        margin: 0 auto 10px;
+        clear:  both;
+    }
+    .single-info .watch-Area {
+        padding: 0;
+        margin:  0;
+        width:  100%;
+        float:  none;
+    }
+    .single-info .watch-Area iframe {
+        height: 300px;
+    }
+    .download-servers h2.TitleAreaTwo {
+        font-size: 14px;
+        height: auto
+    }
+    .download-servers h2.TitleAreaTwo span {
+        float:  right;
+        width: calc(100% - 40px);
+    }
+    .download-servers ul {
+        text-align:center
+    }
+    .download-servers li {
+        float: none;
+        display:  inline-block;
+        margin:  7px auto 0;
+        width: 100%
+    }
+    .ActorPage > div > .left,
+    .ActorPage > div > .right {
+        float: none;
+        width:  100%;
+        margin-right:  0;
+        padding:  0;
+    }
+    .ActorPage {
+        padding: 20px 10px;
+    }
+    .ActorBlocksHolder li.random-block {
+        float: none;
+        display:  block;
+        width:  80%;
+        margin: 0 auto 10opx;
+        margin-left:   auto;
+        margin-right:  auto;
+    }
+    .ActorBlocksHolder li.random-block:nth-child(3n+1) {
+        margin-left: auto !important
+    }
+    .ActorBlocksHolder li.random-block:nth-child(odd) {
+        margin-right: auto;
+        margin-left:   auto;
+    }
+    .ActorBlocksHolder li.random-block:nth-child(4n+1) {
+        margin-left: auto
+    }
+    .ActorPage > div > .left .MostViews {
+        margin: 0;
+        margin-top: 15px
+    }
+    footer {
+        padding: 0 20px
+    }
+    footer .left,
+    footer .right {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    .ActorPage > div > .right .header h1 {
+        float:none;
+        display: block;
+        clear:  both;
+    }
+    .ActorPage > div > .right .header .share {
+        float: none;
+        display: block;
+        clear: both
+    }
+    .ActorPage > div > .right .header {
+        height: auto;
+        text-align: center;
+    }
+    .ActorPage > div > .right .header .share li {
+        float: none;
+        display: inline-block;
+        margin-left: 2px
+    }
+    .ActorPage > div > .right .header .share > ul >span {
+        display:  inline-block;
+        float:  none;
+        padding: 0 !important;
+        display:  none;
+    }
+    .OtherActors .Holder li {
+        width: 32%;
+        height:  100px;
+        margin-bottom:  8px;
+        margin-left: 6px;
+    }
+    .OtherActors .Holder li:nth-child(3n+0) {
+        margin-left: 0
+    }
+    .TemplatePage {
+        padding: 20px 15px;
+    }
+    .ActorsListBlock {
+        width: 48.7%;
+        margin-left:  0;
+    }
+    .ActorsListBlock:nth-child(odd) {
+        margin-left: 7px
+    }
+    .adsHome .col {
+        width: 100%;
+        margin-bottom:10px;
+        height: 70px;
+    }
+    .adsHome {
+        margin: 20px 0 10px;
+        padding: 0 10px;
+    }
+    .AdvancedSearch {
+        height: auto;
+    }
+    .AdvancedSearch span {
+        float: none;
+        display: block;
+        width: 100%;
+        text-align:  center;
+    }
+    .AdvancedSearch span i {
+        float: none;
+        display: inline-block;
+        font-size: 20px
+    }
+    .AdvancedSearch span em {
+        float: none;
+        font-size: 20px
+    }
+    .AdvancedSearch form {
+        display: block;
+        width: 100%;
+        padding: 0 10px;
+    }
+    .AdvancedSearch form input {
+        display: block;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    .AdvancedSearch form select {
+        display: block;
+        width: 100%;
+        height: 30px;
+        margin-bottom: 5px;
+    }
+    .AdvancedSearch form button {
+        display: block;
+        width: 100%;
+        height: 30px
+    }
+}
