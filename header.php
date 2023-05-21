@@ -217,16 +217,17 @@
             // });
         </script>
         <!--:: Introducation ::-->
-        <?php if (is_home()) { ?>
+        <?php  if (is_home()) {  ?>
             <?php
+           
 				$recentQuery = new WP_Query( array( 
-					'post_type' => array('movie','season') ,
+					'post_type' => array('movie','serie') ,
 					'posts_per_page' => 40,
                     'tag' => 'onslider',
 					'paged' => 1
 				)); 
+              
             if ($recentQuery->have_posts()) {
-                
             
             ?>
             
@@ -246,10 +247,29 @@
                 $title = $post->post_title;
                 $postType = get_post_type($post->ID);
 
-                if($postType == "season" ) {
-                    $serie = get_post( get_post_meta($post->ID,'season_serie', true) );
+                if($postType == "serie" ) {
+                    $db_name = $wpdb->dbname;
+                    $db_user = $wpdb->dbuser;
+                    $db_password = $wpdb->dbpassword;
+                    $db_host = $wpdb->dbhost;
+                    try {
+                        $pdo = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_password);
+                        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    } catch (PDOException $e) {
+                        die("Database connection failed: " . $e->getMessage());
+                    }
+                    $query = "SELECT s.serieId, s.name as season_name, e.seasonId, e.eorder , e.name  , e.video , s.cover FROM episodes e JOIN seasons s ON e.seasonId = s.id WHERE (e.seasonId, e.eorder) IN ( SELECT seasonId, MAX(eorder) FROM episodes GROUP BY seasonId ) and s.serieId = :serie_id ORDER BY s.serieId;";
+                    $stmt = $pdo->prepare($query);
+                    $stmt->bindParam(':serie_id', $post->ID, PDO::PARAM_INT);
+                    $stmt->execute();
+                    $episode = $stmt->fetch(PDO::FETCH_OBJ);
+
+                    $serie = $post;
                     $cats = get_the_terms($serie->ID ,'category','');
                     $title = $serie->post_title;
+                    if($episode) {
+                        $title .= ' - '. $episode->season_name.' - '.$episode->name;
+                    }
                     $thumb = wp_get_attachment_url(get_post_thumbnail_id($serie->ID));
                 } else {
                     $thumb = wp_get_attachment_url(get_post_thumbnail_id());
@@ -268,7 +288,7 @@
                     <div class="slide-wrapper">
                             
                             <div class="slider-title">
-                                <h1><?=$title; ?></h1>
+                                <h3><?=$title; ?></h3>
                             </div>
                             <div class="slider-metdata">
                                 <div class="rate-container">
@@ -344,7 +364,7 @@
                                         $j=0; 
                                         while($j < $cats_length && $collected < 3) {
                                             $key = $cats[$j]; 
-                                            if($key->slug != "movie" && $key->slug != "serie") {
+                                            if($key->slug != "movies" && $key->slug != "series") {
                                                 array_push($toprint , $key);
                                                 $collected++;
                                             }

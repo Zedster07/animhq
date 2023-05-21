@@ -52,7 +52,7 @@
 					array_push($rates_list , get_the_terms($post->ID,'ratings-cat' , ''));
 					array_push($episodes_list , get_post($post->ID));
 					?>
-					<div class="single-poster flex-item  visiblegroup-<?=$group?>" <?=$hide?>>
+					<div class="single-poster flex-item  visiblegroup-<?=$group?>" >
 
 					
 						<?php if (!empty($season->cover)) { ?>
@@ -99,11 +99,11 @@
 									<?php if($season->sorder){ ?>
 										<h6><?=$season->name?></h6>
 									<?php } ?>
-									<?php if($season->sorder && !empty($years_list[$i]) ){ ?>
+									<?php if($season->sorder && !empty($years_list[0]) ){ ?>
 										<h6>-</h6>
 									<?php }?>
 									
-									<?php if (!empty($years_list[$i])) { foreach (array_slice($years_list[$i], 0,1 ) as $key ) { ?>
+									<?php if (!empty($years_list[0])) { foreach (array_slice($years_list[0], 0,1 ) as $key ) { ?>
 										<h6><?=$key->name?></h6>
 									<?php }} ?>
 								</div>
