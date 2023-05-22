@@ -1,10 +1,14 @@
 <?php 
+	$user_id = get_current_user_id();
+	$member = pms_get_member( $user_id );
+	$isSubscribed = hasSubscription($member->subscriptions);
 	get_header();
 	makeViews(get_the_ID());
 	$seasons = getSeasons($post->ID);
 	$years = get_the_terms($post->ID,'year-cat' , '');
 	$cats = get_the_terms($post->ID,'category' , '');
 	$ratings = get_the_terms($post->ID,'ratings-cat' , '');
+	$isFree = isFree(get_the_terms($post->ID,'post_tag' , ''));
 	$rate = null;
 	if(!empty($ratings)){
 		$rate = $ratings[0]->name;
@@ -15,8 +19,8 @@
 
 	
 	$season = getSeason($season_number);
-	$episodes = getEpisodes($season->id);
-	$episode = $episodes[0];
+	$episodes = $season ? getEpisodes($season->id) : null;
+	$episode = $episodes ? $episodes[0] : null;
 
 	
 	
@@ -175,11 +179,17 @@
 		<div class="serie-watch-area">
 			<?php 
 				$allowed = false;
-				$subscription_plans = array('18');
-				if( !pms_is_post_restricted( $post->ID ) ){
-					 if(pms_is_member_of_plan( $subscription_plans)){
+				$subscription_plans = array('14');
+				
+				if( !$isFree ){
+					
+					 if(pms_is_member_of_plan( $subscription_plans) and $isSubscribed ){
 						$allowed = true;
 					 } 
+
+				} else {
+				
+					$allowed = true;
 				}
 			?>
 

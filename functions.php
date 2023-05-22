@@ -10,8 +10,25 @@
     } catch (PDOException $e) {
         die("Database connection failed: " . $e->getMessage());
     }
-                    
+                            
+    function isFree($tags) {
+        foreach ($tags as $tag) {
+            if($tag->name == "free") {
+                return true;
+            }
+        }
 
+        return false;
+    }
+
+    function hasSubscription($subscriptions) {
+        foreach ($subscriptions as $sub) {
+            if($sub['status'] == "active"){
+                return true;
+            }
+        }
+        return false;
+    }
 
     function getEpisodes($seasonId) {
         global $pdo;
