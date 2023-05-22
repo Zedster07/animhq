@@ -268,6 +268,7 @@ function keyboardShortcuts(event) {
 
       <video controls class="video" id="video" preload="metadata" onloadeddata="initializeVideo()" poster="<?=$season->cover?>">
         <source src="<?=$episode->video?>" type="video/mp4"></source>
+        <source src="<?=$episode->video?>" type="video/x-matroska"></source>
       </video>
 
       <div class="video-controls hidden" id="video-controls">
