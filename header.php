@@ -288,7 +288,7 @@
                     <div class="slide-wrapper">
                             
                             <div class="slider-title">
-                                <h3><?=$title; ?></h3>
+                                <h4><?=$title; ?></h4>
                             </div>
                             <div class="slider-metdata">
                                 <div class="rate-container">
@@ -392,11 +392,12 @@
                             <div class="slider-desc">
                                 <?php the_content(); ?>
                             </div>
-                            <div>
-                                <span class="dots">...</span>
-                            </div>
                             <div class="slider-watchNow">
                                 <div class="flip">
+                                        <a href="<?php the_permalink(); ?>">
+                                            <div class="front">شاهد</div>
+                                            <div class="back">الآن</div>
+                                        </a>
                                     <?php 
                                         $serie = get_post_meta($post->ID,'season_serie',true);
 

@@ -13,14 +13,7 @@
 		die("Database connection failed: " . $e->getMessage());
 	}
 
-	function getSeason($seasonID){
-		global $pdo;
-		$query = "SELECT * FROM seasons where id = :season_id";
-		$stmt = $pdo->prepare($query);
-		$stmt->bindParam(':season_id', $seasonID, PDO::PARAM_INT);
-		$stmt->execute();
-		return $stmt->fetch(PDO::FETCH_OBJ);
-	}
+	
 
 	$query = "SELECT s.serieId, s.name, e.seasonId, e.eorder , e.name  , e.video , s.cover FROM episodes e JOIN seasons s ON e.seasonId = s.id WHERE (e.seasonId, e.eorder) IN ( SELECT seasonId, MAX(eorder) FROM episodes GROUP BY seasonId ) ORDER BY s.serieId;";
 	$stmt = $pdo->prepare($query);

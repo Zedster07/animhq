@@ -1,5 +1,5 @@
 <?php 
-	die('dada');
+
 	get_header();
 	makeViews(get_the_ID());
 	$pageid = get_the_ID();

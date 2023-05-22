@@ -8,7 +8,9 @@ Author URI: https://www.facebook.com/animehq
 */
 /*--|| Fonts ||--*/
 @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Tajawal:wght@800&display=swap");
-
+:root {
+  --youtube-red: #dd9933;
+}
 @font-face {
   font-family: "Cairo";
   src: local(Cairo);
@@ -30,7 +32,7 @@ body {
   color: #111;
   padding: 0;
   margin: 0;
-  direction: rtl !important;
+  direction: rtl;
   font-size: 14px;
   background: rgb(22, 22, 22);
   overflow-x: hidden;
@@ -3377,14 +3379,26 @@ h2.section-title i {
   color: white;
   width: 450px;
   font-size: 1.1rem;
-  height: 130px;
   overflow: hidden;
+  
+  
 }
-.animehq-slider .animehq-slide .slide-wrapper .slider-desc p:after {
-  content: "...";
-  position: absolute;
-  color: white;
+.serie-desc p {
+  display: -webkit-box; /* Use the old flexbox syntax */
+  -webkit-box-orient: vertical; /* Set the box orientation to vertical */
+  -webkit-line-clamp: 4; /* Limit the number of lines to show */
+  overflow: hidden; /* Hide any overflowing content */
+  text-overflow: ellipsis; /* Add the ellipsis */
 }
+
+.animehq-slider .animehq-slide .slide-wrapper .slider-desc p {
+  display: -webkit-box; /* Use the old flexbox syntax */
+  -webkit-box-orient: vertical; /* Set the box orientation to vertical */
+  -webkit-line-clamp: 4; /* Limit the number of lines to show */
+  overflow: hidden; /* Hide any overflowing content */
+  text-overflow: ellipsis; /* Add the ellipsis */
+}
+
 .bodytopmargin {
   width: 100%;
   padding-top: 70px;
@@ -3463,10 +3477,6 @@ h2.section-title i {
   /* position: absolute; */
   /* width: 160px; */
   height: 48px;
-  -webkit-perspective: 500px;
-  -moz-perspective: 500px;
-  -ms-perspective: 500px;
-  perspective: 500px;
   top: 50%;
   left: 50%;
   /* margin: 15px 0 0 -80px; */
@@ -3479,21 +3489,7 @@ h2.section-title i {
   width: 100%;
   height: 100%;
   position: absolute;
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  -o-transform-style: preserve-3d;
-  -ms-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  -webkit-transform: translateZ(-25px);
-  -moz-transform: translateZ(-25px);
-  -o-transform: translateZ(-25px);
-  -ms-transform: translateZ(-25px);
-  transform: translateZ(-25px);
-  -webkit-transition: -webkit-transform 0.3s;
-  -moz-transition: -moz-transform 0.3s;
-  -o-transition: -o-transform 0.3s;
-  -ms-transition: -ms-transform 0.3s;
-  transition: transform 0.3s;
+
   cursor: pointer;
 }
 .flip a .front,
@@ -3550,13 +3546,7 @@ h2.section-title i {
   -ms-transition-delay: 0.15s;
   transition-delay: 0.15s;
 }
-.flip a:hover {
-  -webkit-transform: translateZ(-24px) rotateX(-90deg);
-  -moz-transform: translateZ(-24px) rotateX(-90deg);
-  -o-transform: translateZ(-24px) rotateX(-90deg);
-  -ms-transform: translateZ(-24px) rotateX(-90deg);
-  transform: translateZ(-24px) rotateX(-90deg);
-}
+
 .flip a:hover .front {
   background: #000;
   -webkit-transition: all 0.8s ease;
@@ -4458,4 +4448,281 @@ label:hover span {
   .searchForm {
     top: 45px;
   }
+}
+
+.embed-container {
+  direction: ltr !important;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.embed-container  .video-container {
+  width: 100%;
+  border-radius: 4px;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.embed-container  video {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+}
+
+.embed-container  .video-controls {
+  right: 0;
+  left: 0;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  transition: all 0.2s ease;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+}
+
+.embed-container  .video-controls.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.embed-container  .video-progress {
+  position: relative;
+  height: 8.4px;
+  margin-bottom: 10px;
+}
+
+.embed-container  progress {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 2px;
+  width: 100%;
+  height: 8.4px;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+}
+
+.embed-container  progress::-webkit-progress-bar {
+  background-color: #474545;
+  border-radius: 2px;
+}
+
+.embed-container  progress::-webkit-progress-value {
+  background: var(--youtube-red);
+  border-radius: 2px;
+}
+
+.embed-container  progress::-moz-progress-bar {
+  border: 1px solid var(--youtube-red);
+  background: var(--youtube-red);
+}
+
+.embed-container  .seek {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  cursor: pointer;
+  margin: 0;
+}
+
+.embed-container .seek:hover+.seek-tooltip {
+  display: block;
+}
+
+.embed-container .seek-tooltip {
+  display: none;
+  position: absolute;
+  top: -50px;
+  margin-left: -20px;
+  font-size: 12px;
+  padding: 3px;
+  content: attr(data-title);
+  font-weight: bold;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.embed-container  .bottom-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.embed-container  .left-controls {
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.embed-container .volume-controls {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.embed-container .volume-controls input {
+  width: 100px;
+  opacity: 1;
+  transition: all 0.4s ease;
+}
+
+.embed-container .volume-controls:hover input, .volume-controls input:focus {
+  width: 100px;
+  opacity: 1;
+}
+
+.embed-container button {
+  cursor: pointer;
+  position: relative;
+  margin-right: 7px;
+  font-size: 12px;
+  padding: 3px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.embed-container button * {
+  pointer-events: none;
+}
+
+.embed-container button::before {
+  content: attr(data-title);
+  position: absolute;
+  display: none;
+  right: 0;
+  top: -50px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-weight: bold;
+  padding: 4px 6px;
+  word-break: keep-all;
+  white-space: pre;
+}
+
+.embed-container button:hover::before {
+  display: inline-block;
+}
+
+.embed-container .fullscreen-button {
+  margin-right: 0;
+}
+
+.embed-container .pip-button svg {
+  width: 26px;
+  height: 26px;
+}
+
+.embed-container .playback-animation {
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -40px;
+  margin-top: -40px;
+  width: 80px;
+  height: 80px;
+  border-radius: 80px;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+
+.embed-container input[type=range] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  height: 8.4px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.embed-container input[type=range]:focus {
+  outline: none;
+}
+
+.embed-container input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  cursor: pointer;
+  border-radius: 1.3px;
+  -webkit-appearance: none;
+  transition: all 0.4s ease;
+}
+
+.embed-container input[type=range]::-webkit-slider-thumb {
+  height: 16px;
+  width: 16px;
+  border-radius: 16px;
+  background: var(--youtube-red);
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-left: -1px;
+}
+
+.embed-container input[type=range]:focus::-webkit-slider-runnable-track {
+  background: transparent;
+}
+
+.embed-container input[type=range].volume {
+  height: 5px;
+  background-color: #fff;
+}
+
+.embed-container input[type=range].volume::-webkit-slider-runnable-track {
+  background-color: transparent;
+}
+
+.embed-container input[type=range].volume::-webkit-slider-thumb {
+  margin-left: 0;
+  height: 14px;
+  width: 14px;
+  background: #fff;
+}
+
+.embed-container input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  background: transparent;
+  border-radius: 1.3px;
+}
+
+.embed-container input[type=range]::-moz-range-thumb {
+  height: 14px;
+  width: 14px;
+  border-radius: 50px;
+  border: 1px solid var(--youtube-red);
+  background: var(--youtube-red);
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.embed-container input[type=range]:focus::-moz-range-track {
+  outline: none;
+}
+
+.embed-container input[type=range].volume::-moz-range-thumb {
+  border: 1px solid #fff;
+  background: #fff;
+}
+
+.embed-container .hidden {
+  display: none;
+}
+
+.embed-container svg {
+  width: 28px;
+  height: 28px;
+  fill: #fff;
+  stroke: #fff;
+  cursor: pointer;
 }

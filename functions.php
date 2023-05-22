@@ -1,4 +1,58 @@
 <?php
+
+    $db_name = $wpdb->dbname;
+    $db_user = $wpdb->dbuser;
+    $db_password = $wpdb->dbpassword;
+    $db_host = $wpdb->dbhost;
+    try {
+        $pdo = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_password);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    } catch (PDOException $e) {
+        die("Database connection failed: " . $e->getMessage());
+    }
+                    
+
+
+    function getEpisodes($seasonId) {
+        global $pdo;
+        $query = "SELECT * FROM episodes WHERE seasonId = :seasonID";
+        $stmt = $pdo->prepare($query);
+        $stmt->bindParam(':seasonID', $seasonId, PDO::PARAM_INT);
+        $stmt->execute();
+        if($stmt->rowCount() == 0 ) return null;
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    function getSeason($seasonId) {
+        global $pdo;
+        $query = "SELECT * FROM seasons WHERE id = :seasonID";
+        $stmt = $pdo->prepare($query);
+        $stmt->bindParam(':seasonID', $seasonId, PDO::PARAM_INT);
+        $stmt->execute();
+        if($stmt->rowCount() == 0 ) return null;
+        return $stmt->fetch(PDO::FETCH_OBJ);
+    }
+
+    function getEpisode($episodeId) {
+        global $pdo;
+        $query = "SELECT * FROM episodes WHERE id = :episodeId";
+        $stmt = $pdo->prepare($query);
+        $stmt->bindParam(':episodeId', $episodeId, PDO::PARAM_INT);
+        $stmt->execute();
+        if($stmt->rowCount() == 0 ) return null;
+        return $stmt->fetch(PDO::FETCH_OBJ);
+    }
+
+    function getSeasons($serieId) {
+        global $pdo;    
+        $query = "SELECT * FROM seasons WHERE serieId = :serieId";
+        $stmt = $pdo->prepare($query);
+        $stmt->bindParam(':serieId', $serieId, PDO::PARAM_INT);
+        $stmt->execute();
+        if($stmt->rowCount() == 0 ) return null;
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
+    }
+
     function Main() {
         load_theme_textdomain('MK' , get_template_directory().'/lang');
         // Theme Supports
@@ -190,4 +244,26 @@
 			exit;
 		}
 	}  
+
+    function flush_rewrite_rules_custom() {
+        flush_rewrite_rules();
+    }
+    add_action('after_switch_theme', 'flush_rewrite_rules_custom');
+
+    function custom_rewrite_rule() {
+        add_rewrite_rule(
+            '^serie/([^/]+)/?$',
+            'index.php?post_type=serie&name=$matches[1]',
+            'top'
+        );
+        add_rewrite_rule(
+            '^serie/([^/]+)/episodes/([^/]+)/?$',
+            'index.php?post_type=serie&name=$matches[1]&episodes=$matches[2]',
+            'top'
+        );
+        add_rewrite_rule('^embed/([^/]+)/?', 'index.php?embed=$matches[1]', 'top');
+    }
+    add_action('init', 'custom_rewrite_rule', 10, 0);
+
+
     require_once(get_template_directory() . '/Inc/manage.php');
