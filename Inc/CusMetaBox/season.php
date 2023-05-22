@@ -26,8 +26,9 @@ function season_meta_save( $post_id ) {
 	if ( $is_autosave || $is_revision || !$is_valid_nonce ) {
 		return;
 	}
-	$select_serie = $_POST['select-serie'];
-	if (isset($select_serie)) {
+	
+	if (isset($_POST['select-serie'])) {
+		$select_serie = $_POST['select-serie'];
 		update_post_meta( $post_id, 'season_serie',$select_serie);
 		$seasons_list = get_post_meta($select_serie,'seasons_list',true);
 		$seasons_list = (is_array($seasons_list)) ? $seasons_list : array();
