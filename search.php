@@ -27,55 +27,10 @@ $search_term = get_search_query();
 						$recentQuery->the_post();
 						$serie_id = $post->ID;
 
-						if($post->post_type == "serie"){
-							$seasonQuery = new WP_Query( array(
-								'post_type' => array('season') ,
-								'post_status' => "publish",
-								'posts_per_page' => -1,
-								'orderby' => 'date',
-								'meta_query' => array(
-									array(
-										'key' => 'season_serie',
-										'value' => $post->ID,
-										'compare' => '=='
-									),
-								),
-							));
-
-							if($seasonQuery->have_posts()){
-								while($seasonQuery->have_posts()){
-									$seasonQuery->the_post();
-									$season_id = $post->ID;
-									$postQuery = new WP_Query( array(
-										'post_type' => array('episode') ,
-										'post_status' => "publish",
-										'posts_per_page' => 1,
-										'meta_key' => array('episode_numbar'),
-										'orderby' => 'meta_value_num',
-										'meta_query' => array(
-											array(
-												'key' => 'episode_season',
-												'value' => $post->ID,
-												'compare' => '=='
-											),
-										),
-									));
-									if($postQuery->have_posts()){
-										$postQuery->the_post();
-										array_push($cats_list , get_the_terms($serie_id ,'category' , ''));
-										array_push($years_list , get_the_terms($season_id,'year-cat' , ''));
-										array_push($rates_list , get_the_terms($serie_id ,'ratings-cat' , ''));
-										array_push($episodes_list , get_post($post->ID));
-									}
-								}
-								
-							}
-						} else {
-							array_push($cats_list , get_the_terms($post->ID ,'category' , ''));
-							array_push($years_list , get_the_terms($post->ID,'year-cat' , ''));
-							array_push($rates_list , get_the_terms($post->ID ,'ratings-cat' , ''));
-							array_push($episodes_list , $post);
-						}
+						array_push($cats_list , get_the_terms($post->ID ,'category' , ''));
+						array_push($years_list , get_the_terms($post->ID,'year-cat' , ''));
+						array_push($rates_list , get_the_terms($post->ID ,'ratings-cat' , ''));
+						array_push($episodes_list , $post);
 						
 					}
 				}
@@ -89,31 +44,21 @@ $search_term = get_search_query();
 		<?php $i=0; while ($i < count($episodes_list)) { $post = $episodes_list[$i];  
 
 				$contentType = 1;
-				if($post->post_type == "episode"){
+				if($post->post_type == "serie"){
+					$seasons = getSeasons($post->ID);
 					$contentType = 1;
-					$season = get_post_meta($post->ID,'episode_season',true);
-					$serie = get_post_meta($post->ID,'episode_serie',true);
-					$season_post = get_post( $season );
+					$season_number = count($seasons);
+					$title = $post->post_title;
+					$thumb = $seasons[0]->cover;
 					
-					$season_number = $season_post->post_title;
-					$season_number = explode("-", $season_number)[1];
-					$serie_post = get_post( $serie ); 
-
-					$title = $serie_post->post_title;
-					$thumb = wp_get_attachment_url(get_post_thumbnail_id($season_post->ID));
-					
-					
-					$serie_title = $serie_post->post_title;
-				
-
-					$episode = get_post_meta($post->ID,'episode_numbar',true);
 					$ended = false;
-					if(has_tag("ended" , $season)){
+					if(has_tag("ended" , $post)){
 						$ended = true;
 					}
 				} else {
 					$contentType = 2;
-					$thumb = wp_get_attachment_url(get_post_thumbnail_id());
+					$movie = getMovie($post->ID);
+					$thumb = $movie->cover;
 					$episode = null;
 					$title = $post->post_title;
 				}

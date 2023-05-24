@@ -1,8 +1,9 @@
 <?php 
 	get_header();
 	makeViews(get_the_ID());
-	$watchServers = get_post_meta($post->ID,'servers',true);
-	$Thumbnail = wp_get_attachment_url(get_post_thumbnail_id());
+	$movie = getMovie($post->ID);
+	
+	$Thumbnail = $movie->cover;
 	$cats = get_the_terms($post->ID,'category' , '');
 	$years = get_the_terms($post->ID,'year-cat' , '');
 	$ratings = get_the_terms($post->ID,'ratings-cat' , '');
@@ -17,7 +18,8 @@
 
 			<div class="single-poster flex-item serie-info-poster">	
 					<?php if (!empty($Thumbnail)) { ?>
-						<img class="poster-img" src="<?=$Thumbnail?>" alt="<?=the_title() ?>">
+						<div class="poster-img" style="background: url(<?php echo($Thumbnail) ?>);   background-size: cover;
+  background-position: center center;"></div>
 					<?php } else { ?>
 						<img class="poster-img" src="<?=get_template_directory_uri()?>/Interface/images/no-thumb.jpeg" alt="<?=the_title() ?>">
 					<?php } ?>
@@ -76,11 +78,14 @@
 					<div class="series-data-content">
 						<?php 
 						if (!empty($cats)) { 
-							foreach ($cats as $cat ) { ?>
-								<div class="rate">-</div>
-								<span><?=$cat->name?></span>
+							foreach ($cats as $key => $cat ) { 
+								if($cat->slug != "series" and $cat->slug != "movies"){
+								?>
+								<?php if($key != 0) { ?><div class="rate">-</div> <?php } ?>
+								<a href="<?=get_term_link($cat)?>"><?=$cat->name?></a>
+								
 						
-						<?php }
+							<?php }}
 						}
 						
 						?>
@@ -97,24 +102,33 @@
 	</section>
 
 	<section class="serie-episodes-watch">
-		<div class="serie-episodes-watch-list">
-			<h1>سيرفيرات المشاهدة</h1>
-			<ul>
-			<?php $i = 1; foreach ($watchServers as $server) { ?>
-				<?php $class=""; if($i == 1){
-					$class = "active";
-				} ?>
-				<li data-watch="<?=$server['server_url']?>" class="<?=$class?>">
-					<i class="fa fa-play"></i>
-					<span><?php echo $server['server_name'] ?></span>
-				</li>
-			<?php $i++;} ?>
-			</ul>
-		</div>
-		<div class="serie-watch-area">
-			<iframe src="" frameborder="0" allowfullscreen></iframe>
-		</div>
-	</section>
+			<div class="serie-watch-area">
+				<?php 
+					$allowed = false;
+					$subscription_plans = array('18');
+					if( !pms_is_post_restricted( $post->ID ) ){
+						if(pms_is_member_of_plan( $subscription_plans)){
+							$allowed = true;
+						} 
+					}
+				?>
+
+				<?php if($allowed){ ?>
+					<iframe src="<?php echo home_url()."?embed=".$movie->id."&ep=0"; ?>" frameborder="0" allowfullscreen></iframe>
+				<?php } else {?>
+					<div class="notAllowed">
+						<h2>فقط المشتركين يمكنهم مشاهدة هذا المحتوى</h2>
+						<div class="flip">
+							<a href="<?=bloginfo('url')?>/plans">
+								<div class="front">شارك</div>
+								<div class="back">الآن</div>
+							</a>
+						</div>
+					</div>
+				<?php }?>
+			</div>
+		</section>
+	
 </div>
 
 <script>

@@ -1,6 +1,5 @@
 <div class="container">
 		<div class="content-animehq flex-row">
-			
 			<?php
 				$total = 0;
 				$recentQuery = new WP_Query( array( 
@@ -46,7 +45,8 @@
 
 					
 						<?php if (!empty($thumb)) { ?>
-							<img class="poster-img" src="<?=$thumb?>" alt="<?=the_title() ?>">
+							<div class="poster-img" style="background: url(<?php echo($thumb) ?>);   background-size: cover;
+  background-position: center center;"></div>
 						<?php } else { ?>
 							<img class="poster-img" src="<?=get_template_directory_uri()?>/Interface/images/no-thumb.jpeg" alt="<?=the_title() ?>">
 						<?php } ?>

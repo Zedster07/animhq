@@ -56,7 +56,8 @@
 
 					
 						<?php if (!empty($season->cover)) { ?>
-							<img class="poster-img" src="<?=$season->cover?>" alt="<?=the_title() ?>">
+							<div class="poster-img" style="background: url(<?php echo($season->cover) ?>);   background-size: cover;
+  background-position: center center;"></div>
 						<?php } else { ?>
 							<img class="poster-img" src="<?=get_template_directory_uri()?>/Interface/images/no-thumb.jpeg" alt="<?=the_title() ?>">
 						<?php } ?>

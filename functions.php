@@ -50,6 +50,26 @@
         return $stmt->fetch(PDO::FETCH_OBJ);
     }
 
+    function getMovieById($movieId){
+        global $pdo;
+        $query = "SELECT * FROM movies WHERE id = :postId";
+        $stmt = $pdo->prepare($query);
+        $stmt->bindParam(':postId', $movieId, PDO::PARAM_INT);
+        $stmt->execute();
+        if($stmt->rowCount() == 0 ) return null;
+        return $stmt->fetch(PDO::FETCH_OBJ);
+    }
+
+    function getMovie($postId) {
+        global $pdo;
+        $query = "SELECT * FROM movies WHERE postId = :postId";
+        $stmt = $pdo->prepare($query);
+        $stmt->bindParam(':postId', $postId, PDO::PARAM_INT);
+        $stmt->execute();
+        if($stmt->rowCount() == 0 ) return null;
+        return $stmt->fetch(PDO::FETCH_OBJ);
+    }
+
     function getEpisode($episodeId) {
         global $pdo;
         $query = "SELECT * FROM episodes WHERE id = :episodeId";

@@ -3386,7 +3386,7 @@ h2.section-title i {
 .serie-desc p {
   display: -webkit-box; /* Use the old flexbox syntax */
   -webkit-box-orient: vertical; /* Set the box orientation to vertical */
-  -webkit-line-clamp: 4; /* Limit the number of lines to show */
+  -webkit-line-clamp: 3; /* Limit the number of lines to show */
   overflow: hidden; /* Hide any overflowing content */
   text-overflow: ellipsis; /* Add the ellipsis */
 }
@@ -3394,7 +3394,7 @@ h2.section-title i {
 .animehq-slider .animehq-slide .slide-wrapper .slider-desc p {
   display: -webkit-box; /* Use the old flexbox syntax */
   -webkit-box-orient: vertical; /* Set the box orientation to vertical */
-  -webkit-line-clamp: 4; /* Limit the number of lines to show */
+  -webkit-line-clamp: 3; /* Limit the number of lines to show */
   overflow: hidden; /* Hide any overflowing content */
   text-overflow: ellipsis; /* Add the ellipsis */
 }
@@ -3584,11 +3584,13 @@ h2.section-title i {
   flex: 24%;
   margin: 0.5%;
   max-width: 24%;
+  min-height: 400px;
   animation: animatePosterBack 0.5s forwards;
 }
 
 .single-poster .poster-img {
   width: 100%;
+  min-height: 400px;
 }
 
 .poster-wrapper {
@@ -3903,6 +3905,7 @@ h2.section-title i {
 .serie-episodes-watch {
   display: flex;
   width: 100%;
+  margin: 0 auto;
   flex-direction: row;
   justify-content: flex-start;
   padding-top: 30px;
@@ -4468,6 +4471,7 @@ label:hover span {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: black;;
 }
 
 .embed-container  video {
@@ -4611,6 +4615,15 @@ label:hover span {
   display: inline-block;
 }
 
+.embed-container .right-controls{
+  display: flex;
+  align-items: center;
+}
+.embed-container .downloadButton {
+  color: white !important;
+  font-weight: bold;
+  margin-right: 15px;
+}
 .embed-container .fullscreen-button {
   margin-right: 0;
 }
@@ -4726,3 +4739,46 @@ label:hover span {
   stroke: #fff;
   cursor: pointer;
 }
+
+.embed-container .sme-name {
+  margin-left: 15px;
+}
+
+.plansWrapper {
+  display: flex;
+  width: 100%;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+.plansWrapper .planSection {
+  border-radius: 20px;
+  padding-top: 20px;
+  border: 1px solid white;
+  width: 300px;
+  text-align: center;
+  color: #dddddd;
+}
+.plansWrapper .planSection .price {
+  vertical-align: top;
+  direction: ltr;
+}
+.plansWrapper .planSection .price .main-price {
+  font-size: 55px;
+  color: white;
+}
+.plansWrapper .planSection .price .cents
+ {
+  position: relative;
+  bottom: 20px;;
+ }
+ .plansWrapper .planSection .planContent {
+  display: flex;
+  flex-direction: column;
+  padding-top: 15px;
+  margin-top: 15px;
+  border-top: 1px solid silver;
+ }
+ .plansWrapper .planSection .planContent .planLine {
+  margin: 5px 0px;
+ }

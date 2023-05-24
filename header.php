@@ -110,6 +110,7 @@
                             }
                             
                             ?>
+                            
                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-category <?=$class?>"><a href="<?=$link?>"><?php echo $title.$icon; ?> </a></li>
                             <?php 
                         }
@@ -258,7 +259,7 @@
                     } catch (PDOException $e) {
                         die("Database connection failed: " . $e->getMessage());
                     }
-                    $query = "SELECT s.serieId, s.name as season_name, e.seasonId, e.eorder , e.name  , e.video , s.cover FROM episodes e JOIN seasons s ON e.seasonId = s.id WHERE (e.seasonId, e.eorder) IN ( SELECT seasonId, MAX(eorder) FROM episodes GROUP BY seasonId ) and s.serieId = :serie_id ORDER BY s.serieId;";
+                    $query = "SELECT s.serieId, s.name as season_name, e.seasonId, e.eorder , e.name  , e.video_720, e.video_1080,e.video_2k,e.video_4k , s.cover FROM episodes e JOIN seasons s ON e.seasonId = s.id WHERE (e.seasonId, e.eorder) IN ( SELECT seasonId, MAX(eorder) FROM episodes GROUP BY seasonId ) and s.serieId = :serie_id ORDER BY s.serieId;";
                     $stmt = $pdo->prepare($query);
                     $stmt->bindParam(':serie_id', $post->ID, PDO::PARAM_INT);
                     $stmt->execute();

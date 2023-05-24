@@ -11,9 +11,20 @@
     } catch (PDOException $e) {
         die("Database connection failed: " . $e->getMessage());
     }
-
-    $episode = getEpisode($_GET['embed']);
-    $season = getSeason($episode->seasonId);
+    if(isset($_GET['ep']) && $_GET['ep'] == '1') {
+      $episode = getEpisode($_GET['embed']);
+      $season = getSeason($episode->seasonId);
+      $post_id = $season->serieId; 
+      $serie = get_post($post_id);
+      $name = $episode->name;
+    } else {
+      $episode = getMovieById($_GET['embed']);
+      $season = $episode;
+      $post_id = $episode->postId; 
+      $post = get_post($post_id);
+      $name = $post->post_title;
+    }
+    
 
 ?>
 <script>
@@ -61,16 +72,28 @@ function initializeVideo() {
   seek.setAttribute('max', videoDuration);
   progressBar.setAttribute('max', videoDuration);
   const time = formatTime(videoDuration);
-  duration.innerText = `${time.minutes}:${time.seconds}`;
-  duration.setAttribute('datetime', `${time.minutes}m ${time.seconds}s`);
+
+  if(time.hours) {
+    duration.innerText = `${time.hours}:${time.minutes}:${time.seconds}`;
+    duration.setAttribute('datetime', `${time.hours}h ${time.minutes}m ${time.seconds}s`);
+  } else {
+    duration.innerText = `${time.minutes}:${time.seconds}`;
+    duration.setAttribute('datetime', `${time.minutes}m ${time.seconds}s`);
+  }
+  
 }
 
 // updateTimeElapsed indicates how far through the video
 // the current playback is by updating the timeElapsed element
 function updateTimeElapsed() {
   const time = formatTime(Math.round(video.currentTime));
-  timeElapsed.innerText = `${time.minutes}:${time.seconds}`;
-  timeElapsed.setAttribute('datetime', `${time.minutes}m ${time.seconds}s`);
+  if(time.hours) {
+    timeElapsed.innerText = `${time.hours}:${time.minutes}:${time.seconds}`;
+    timeElapsed.setAttribute('datetime', `${time.hours}h ${time.minutes}m ${time.seconds}s`);
+  } else {
+    timeElapsed.innerText = `${time.minutes}:${time.seconds}`;
+    timeElapsed.setAttribute('datetime', `${time.minutes}m ${time.seconds}s`);
+  }
 }
 
 // updateProgress indicates how far through the video
@@ -268,7 +291,6 @@ function keyboardShortcuts(event) {
 
       <video controls class="video" id="video" preload="metadata" onloadeddata="initializeVideo()" poster="<?=$season->cover?>">
         <source src="<?=$episode->video?>" type="video/mp4"></source>
-        <source src="<?=$episode->video?>" type="video/x-matroska"></source>
       </video>
 
       <div class="video-controls hidden" id="video-controls">
@@ -305,9 +327,13 @@ function keyboardShortcuts(event) {
               <span> / </span>
               <time id="duration">00:00</time>
             </div>
+            <div class="sme-name">
+              <?php echo $name; ?>
+            </div>
           </div>
 
           <div class="right-controls">
+            <?php if($episode->downloadLink != null and $episode->downloadLink != "") { ?> <a target="_blank" href="<?php echo($episode->downloadLink); ?>" class="downloadButton">Download</a> <?php } ?>
             <button data-title="PIP (p)" class="pip-button" id="pip-button">
               <svg>
                 <use href="#pip"></use>
@@ -551,15 +577,11 @@ document.addEventListener('keyup', keyboardShortcuts);
 
 
 <section class="posts-section movies-posts" id="movies-posts-anime">
-		
-<?php get_template_part('template', 'movie_posts'); ?>
-
+  <?php get_template_part('template', 'movie_posts_film'); ?>
 </section>
 
 <section class="posts-section movies-posts" id="movies-posts-cartoon">
-		
-	
-<?php get_template_part('template', 'cartoon_posts'); ?>
+  <?php get_template_part('template', 'cartoon_posts'); ?>
 </section>
 
 <script>

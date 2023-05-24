@@ -41,7 +41,47 @@ $pages = array("contactus", "plans");
 		<?php
 		} else if ($post_slug == "plans") {
 			?>
-				<h1>Dada</h1>
+				
+				<div class="plansContainer">
+					<div class="plansWrapper">
+						
+						
+						<div class="planSection">
+							<h1>Sama</h1>
+							<h1 class="price">$<span class="main-price">9.</span><span class="cents">99</span> /mo</h1>
+							<div class="planContent">
+								<h3 class="planLine">بدون إعلانات</h3>
+								<h3 class="planLine">مشاهدة + تحميل</h3>
+								<h3 class="planLine">4 شاشات</h3>
+								<h3 class="planLine">جودة 4k</h3>
+								<h3 class="planLine">بدون تجديد آلي</h3>
+							</div>
+						</div>
+						<div class="planSection">
+							<h1>Sensei</h1>
+							<h1 class="price">$<span class="main-price">4.</span><span class="cents">99</span> /mo</h1>
+							<div class="planContent">
+							<h3 class="planLine">بدون إعلانات</h3>
+								<h3 class="planLine">مشاهدة + تحميل</h3>
+								<h3 class="planLine">2 شاشات</h3>
+								<h3 class="planLine">جودة 1080p</h3>
+								<h3 class="planLine">بدون تجديد آلي</h3>
+							</div>
+						</div>
+						<div class="planSection">
+							<h1>Senpai</h1>
+							<h1 class="price">$<span class="main-price">2.</span><span class="cents">99</span> /mo</h1>
+							<div class="planContent">
+								<h3 class="planLine">بدون إعلانات</h3>
+								<h3 class="planLine">مشاهدة فقط</h3>
+								<h3 class="planLine">شاشة واحدة</h3>
+								<h3 class="planLine">جودة 720p</h3>
+								<h3 class="planLine">بدون تجديد آلي</h3>
+								<a href="#">أشتراك</a>
+							</div>
+						</div>
+					</div>
+				</div>
 			<?php
 		}
 	

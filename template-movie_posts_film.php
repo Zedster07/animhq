@@ -1,13 +1,12 @@
 	<div class="container">
+		
 		<div class="content-animehq flex-row">
-			
 			<?php
 				$total = 0;
 				$recentQuery = new WP_Query( array( 
 					'post_type' => array('movie') ,
 					'post_status' => "publish",
 					'posts_per_page' => 24,
-					'category_name' => 'film-anime',
 					'orderby' => 'publish_date',
     				'order' => 'DESC',
 				));
@@ -15,7 +14,6 @@
 				$cats_list = array();
 				$episodes_list = array();
 				$rates_list = array();
-
 				if ($recentQuery->have_posts()) {
 					?>
 						<h1 class="section-title"> أفلام أنمي  </h1>
@@ -36,7 +34,8 @@
 					$hide = "style='display:none;'";
 				}
 				$recentQuery->the_post();
-				$thumb = wp_get_attachment_url(get_post_thumbnail_id());
+				$movie = getMovie($post->ID);
+				$thumb = $movie->cover;
 				
 				array_push($cats_list , get_the_terms($post->ID,'category' , ''));
 				array_push($years_list , get_the_terms($post->ID,'year-cat' , ''));
@@ -46,7 +45,8 @@
 
 					
 						<?php if (!empty($thumb)) { ?>
-							<img class="poster-img" src="<?=$thumb?>" alt="<?=the_title() ?>">
+							<div class="poster-img" style="background: url(<?php echo($thumb) ?>);   background-size: cover;
+  background-position: center center;"></div>
 						<?php } else { ?>
 							<img class="poster-img" src="<?=get_template_directory_uri()?>/Interface/images/no-thumb.jpeg" alt="<?=the_title() ?>">
 						<?php } ?>
@@ -69,36 +69,22 @@
 						</div>
 						<div class="poster-title">
 							<div class="poster-cats showOnmobile">
-								 <?php if (!empty($cats_list[$i])) {
-									 	$cats = $cats_list[$i]; 
-                                        $toprint = array();
-                                        $collected = 0;
-                                        $cats_length = count($cats);
-                                        $j=0; 
-                                        while($j < $cats_length && $collected < 3) {
-                                            $key = $cats[$j]; 
-                                            if($key->slug != "movie" && $key->slug != "serie") {
-                                                array_push($toprint , $key);
-                                                $collected++;
-                                            }
-                                            $j++;
-                                        }
-
-                                        
-                                        
-                                        $j = 0; $cats_length = count($toprint); 
-                                        while($j < $cats_length) { 
-                                            $key = $toprint[$j]; ?> 
-                                            <h6><a href="<?=get_term_link($key)?>"><?=$key->name?></a></h6>
-                                            <?php if($j < $cats_length-1){ ?>
-                                                <h6 class="separators"><i class="fa fa-circle" aria-hidden="true"></i></h6>
-                                            <?php } ?>
-                                        <?php $j++;}
-                                    } ?>
+							<?php if( !empty($cats_list) ) { $j = 1; foreach ($arr = array_slice($cats_list[0] ,0,2)  as $key ) { ?>
+										<?php 
+										if($key->slug != "movie" && $key->slug != "serie") { ?>
+											<h6><a href="<?=get_term_link($key)?>"><?=$key->name?></a></h6>
+											<?php if($j < count($arr)){ ?>
+												<h6>-</h6>
+											<?php $j++; } ?>
+										<?php }else{
+											$j++;
+										}  ?>
+								
+								<?php }} ?>
 							
 							
 							</div>
-							<h3><?=$title;?></h3>
+							<h3><?=$post->post_title;?></h3>
 							<div class="poster-year-season">
 								
 								<h6>فلم</h6>

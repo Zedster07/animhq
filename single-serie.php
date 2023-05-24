@@ -1,14 +1,10 @@
 <?php 
-	$user_id = get_current_user_id();
-	$member = pms_get_member( $user_id );
-	$isSubscribed = hasSubscription($member->subscriptions);
 	get_header();
 	makeViews(get_the_ID());
 	$seasons = getSeasons($post->ID);
 	$years = get_the_terms($post->ID,'year-cat' , '');
 	$cats = get_the_terms($post->ID,'category' , '');
 	$ratings = get_the_terms($post->ID,'ratings-cat' , '');
-	$isFree = isFree(get_the_terms($post->ID,'post_tag' , ''));
 	$rate = null;
 	if(!empty($ratings)){
 		$rate = $ratings[0]->name;
@@ -19,8 +15,8 @@
 
 	
 	$season = getSeason($season_number);
-	$episodes = $season ? getEpisodes($season->id) : null;
-	$episode = $episodes ? $episodes[0] : null;
+	$episodes = getEpisodes($season->id);
+	$episode = $episodes[0];
 
 	
 	
@@ -33,6 +29,7 @@
 	if($episode_number != null) {
 		$episode = getEpisode($episode_number);
 		$season = getSeason($episode->seasonId);
+		$episodes = getEpisodes($season->id);
 	}
 
 	$Thumbnail = $season->cover;
@@ -43,7 +40,8 @@
 	<section class="serie-info">
 		<div class="single-poster flex-item serie-info-poster">	
 			<?php if (!empty($Thumbnail)) { ?>
-				<img class="poster-img" src="<?=$Thumbnail?>" alt="<?=the_title() ?>">
+				<div class="poster-img" style="background: url(<?php echo($Thumbnail) ?>);   background-size: cover;
+  background-position: center center;"></div>
 			<?php } else { ?>
 				<img class="poster-img" src="<?=get_template_directory_uri()?>/Interface/images/no-thumb.jpeg" alt="<?=the_title() ?>">
 			<?php } ?>
@@ -115,18 +113,19 @@
 							<a href="<?=get_term_link($cat)?>"><?=$cat->name?></a>
 							
 					
-					<?php }}
+						<?php }}
 					}
 					
 					?>
 				</div>
 			</div>
 			<div class="serie-desc serie-data-row">
+				<div class="series-data-title"><span> القصة :</span></div>
 				<?php the_content(); ?>
 			</div>
 		</div>
 
-
+        <?php if(count($seasons) > 1) { ?> 
 		<div class="serie-related">
 			<div class="aside-title">مواسم أخرى</div> 
 				<div class="serie-related-container">
@@ -159,55 +158,52 @@
 				</div>
 			</div>
 		</div>
-	
+		<?php } ?>
 	</section>
-	<section class="serie-episodes-watch">
-		<div class="serie-episodes-watch-list">
-			<h1> حلقات - <?php echo $season->name ?></h1>
-			<ul>
-			<?php $i = 1; foreach ($episodes as $ep) { ?>
-				<?php $class=""; if($episode->id == $ep->id){
-					$class = "active";
-				} ?>
-				<li data-watch="<?=home_url()."?embed=".$ep->id?>" class="<?=$class?>">
-					<i class="fa fa-play"></i>
-					<span><?php echo $ep->name ?></span>
-				</li>
-			<?php $i++;} ?>
-			</ul>
-		</div>
-		<div class="serie-watch-area">
-			<?php 
-				$allowed = false;
-				$subscription_plans = array('14');
-				
-				if( !$isFree ){
-					
-					 if(pms_is_member_of_plan( $subscription_plans) and $isSubscribed ){
-						$allowed = true;
-					 } 
+	<div class="container">
+		<section class="serie-episodes-watch">
+			<div class="serie-episodes-watch-list">
+				<h1> حلقات - <?php echo $season->name ?></h1>
+				<ul>
+				<?php $i = 1; foreach ($episodes as $ep) { ?>
+					<?php $class=""; if($episode->id == $ep->id){
+						$class = "active";
+					} ?>
+					<li data-watch="<?=home_url()."?embed=".$ep->id."&ep=1"?>" class="<?=$class?>">
+						<i class="fa fa-play"></i>
+						<span><?php echo $ep->name ?></span>
+					</li>
+				<?php $i++;} ?>
+				</ul>
+			</div>
+			<div class="serie-watch-area">
+				<?php 
+					$allowed = false;
+					$subscription_plans = array('18');
+					if( !pms_is_post_restricted( $post->ID ) ){
+						if(pms_is_member_of_plan( $subscription_plans)){
+							$allowed = true;
+						} 
+					}
+				?>
 
-				} else {
-				
-					$allowed = true;
-				}
-			?>
-
-			<?php if($allowed){ ?>
-				<iframe src="" frameborder="0" allowfullscreen></iframe>
-			<?php } else {?>
-				<div class="notAllowed">
-					<h2>فقط المشتركين يمكنهم مشاهدة هذا المحتوى</h2>
-					<div class="flip">
-						<a href="<?=bloginfo('url')?>/plans">
-							<div class="front">شارك</div>
-							<div class="back">الآن</div>
-						</a>
+				<?php if($allowed){ ?>
+					<iframe src="" frameborder="0" allowfullscreen></iframe>
+				<?php } else {?>
+					<div class="notAllowed">
+						<h2>فقط المشتركين يمكنهم مشاهدة هذا المحتوى</h2>
+						<div class="flip">
+							<a href="<?=bloginfo('url')?>/plans">
+								<div class="front">شارك</div>
+								<div class="back">الآن</div>
+							</a>
+						</div>
 					</div>
-				</div>
-			<?php }?>
-		</div>
-	</section>
+				<?php }?>
+			</div>
+		</section>
+	</div>
+	
 	<script>
 	$(document).ready(function(){
 		$('.serie-watch-area iframe').attr('src',$('.serie-episodes-watch-list ul li.active').data('watch'));
