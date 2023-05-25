@@ -4776,9 +4776,29 @@ label:hover span {
   display: flex;
   flex-direction: column;
   padding-top: 15px;
-  margin-top: 15px;
   border-top: 1px solid silver;
  }
  .plansWrapper .planSection .planContent .planLine {
   margin: 5px 0px;
+ }
+
+ .plansWrapper .planSection .planContent .plan_sub {
+  width: 100%;
+  padding: 10px 0px;
+  background-color: #dd9933;
+  margin-top: 25px;
+  color: white;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-around;
+  font-size: 18px;
+ }
+ .plansWrapper .planSection .plans_months_select {
+  width: 100%;
+  margin-bottom: 0px;
+  background-color: #dddddd;
+  border: 0px;
+  outline: none;
  }
