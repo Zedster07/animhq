@@ -7,6 +7,14 @@
 	$cats = get_the_terms($post->ID,'category' , '');
 	$years = get_the_terms($post->ID,'year-cat' , '');
 	$ratings = get_the_terms($post->ID,'ratings-cat' , '');
+	$tags = get_the_terms($post->ID,'post_tag' , '');
+	$isFreeSerie = false;
+	if($tags) foreach ($tags as $tag) {
+		if($tag->name == "free"){
+			$isFreeSerie = true;
+			break;
+		}
+	}
 	$rate = null;
 	if(!empty($ratings)){
 		$rate = $ratings[0]->name;
@@ -105,13 +113,14 @@
 			<div class="serie-watch-area">
 				<?php 
 					$allowed = false;
-					$subscription_plans = array('18');
-					if( !pms_is_post_restricted( $post->ID ) ){
-						if(pms_is_member_of_plan( $subscription_plans)){
-							$allowed = true;
-						} 
+					$user = wp_get_current_user();
+					$member_plan =hasSubscription(pms_get_member_subscriptions(array('user_id' => $user->ID)));
+					if($isFreeSerie) {
+						$allowed = true;
+					} else if( $member_plan != null ){
+						$allowed = true;
 					}
-				?>
+				?> 
 
 				<?php if($allowed){ ?>
 					<iframe src="<?php echo home_url()."?embed=".$movie->id."&ep=0"; ?>" frameborder="0" allowfullscreen></iframe>

@@ -123,7 +123,7 @@
             <div class="leftNav">
                 <i class="fa fa-search navicons" id="searchIcon" aria-hidden="true" title=""></i>
                 <div class="searchForm">
-                    <form method="get" id="search_form" action="">
+                    <form method="get" id="search_form" action="<?php bloginfo('url') ?>">
                         <input type="text" name="s" placeholder="البحث عن فلم او مسلسل"/>
                     </form>
                 </div>
@@ -131,7 +131,7 @@
                     <a href="<?=bloginfo('url')?>/account"><i class="fa fa-user navicons" aria-hidden="true" title="حسابي"></i></a>
                     <a href="<?=wp_logout_url(get_bloginfo('url'))?>"><i class="fa fa-sign-out navicons" aria-hidden="true" title="تسجيل الخروج"></i></a>
                 <?php } else { ?>
-                    <a href="<?=bloginfo('url')?>/new-member"><i class="fa fa-user-plus navicons" aria-hidden="true" title="عضو جديد"></i></a>
+                    <a href="<?=bloginfo('url')?>/register"><i class="fa fa-user-plus navicons" aria-hidden="true" title="عضو جديد"></i></a>
                     <a href="<?=bloginfo('url')?>/login"><i class="fa fa-sign-in navicons" aria-hidden="true" title="تسجيل الدخول"></i></a>
                 <?php } ?>
                 

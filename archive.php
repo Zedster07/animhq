@@ -199,7 +199,8 @@
 					while ($i < count($movies_list)) { $post = $movies_list[$i];  
 
 						$contentType = 2;
-						$thumb = wp_get_attachment_url(get_post_thumbnail_id());
+						$movie = getMovie($post->ID);
+						$thumb = $movie->cover;
 						$episode = null;
 						$title = $post->post_title;
 						$addedclass = "";

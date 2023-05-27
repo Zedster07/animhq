@@ -15,7 +15,7 @@
 
 	
 
-	$query = "SELECT s.serieId, s.name, e.seasonId, e.eorder , e.name  , e.video_720, e.video_1080,e.video_2k,e.video_4k , s.cover FROM episodes e JOIN seasons s ON e.seasonId = s.id WHERE (e.seasonId, e.eorder) IN ( SELECT seasonId, MAX(eorder) FROM episodes GROUP BY seasonId ) ORDER BY e.id DESC;";
+	$query = "SELECT s.serieId, s.name, e.seasonId, e.id, e.eorder , e.name  , e.video_720, e.video_1080,e.video_2k,e.video_4k , s.cover FROM episodes e JOIN seasons s ON e.seasonId = s.id WHERE (e.seasonId, e.eorder) IN ( SELECT seasonId, MAX(eorder) FROM episodes GROUP BY seasonId ) ORDER BY e.id DESC;";
 	$stmt = $pdo->prepare($query);
 	$stmt->execute();
 	
@@ -51,8 +51,7 @@
 
 					
 						<?php if (!empty($season->cover)) { ?>
-							<div class="poster-img" style="background: url(<?php echo($season->cover) ?>);   background-size: cover;
-  background-position: center center;"></div>
+							<div class="poster-img" style="background: url(<?php echo($season->cover) ?>);   background-size: cover; background-position: center center;"></div>
 						<?php } else { ?>
 							<img class="poster-img" src="<?=get_template_directory_uri()?>/Interface/images/no-thumb.jpeg" alt="<?=the_title() ?>">
 						<?php } ?>

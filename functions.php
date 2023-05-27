@@ -22,13 +22,37 @@
     }
 
     function hasSubscription($subscriptions) {
-        foreach ($subscriptions as $sub) {
-            if($sub['status'] == "active"){
-                return true;
+        if($subscriptions) {
+            foreach ($subscriptions as $sub) {
+                if($sub->status == "active"){
+                    return $sub;
+                }
             }
         }
-        return false;
+        
+        return null;
     }
+
+    function getPlan($plan_name) {
+		global $wpdb;
+		$db_name = $wpdb->dbname;
+		$db_user = $wpdb->dbuser;
+		$db_password = $wpdb->dbpassword;
+		$db_host = $wpdb->dbhost;
+
+		try {
+			$pdo = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_password);
+			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		} catch (PDOException $e) {
+			die("Database connection failed: " . $e->getMessage());
+		}
+
+		$query = "SELECT * FROM ahq_plans where plan_name = :plan_name";
+		$stmt = $pdo->prepare($query);
+		$stmt->bindParam(':plan_name', $plan_name, PDO::PARAM_STR);
+		$stmt->execute();
+		return $stmt->rowCount() > 0 ? $stmt->fetch(PDO::FETCH_OBJ) : null; 
+	}
 
     function getEpisodes($seasonId) {
         global $pdo;
